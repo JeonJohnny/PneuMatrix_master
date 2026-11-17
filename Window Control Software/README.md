@@ -4,7 +4,7 @@
 
 | 프로그램 | 버전 | 운영체제 | 다운로드 |
 | --- | --- | --- | --- |
-| PneuMatrix Control | 2.0.0 | Windows x64 | [설치 EXE](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.0/PneuMatrix-Setup-2.0.0.exe) |
+| PneuMatrix Control | 2.0.1 | Windows x64 | [설치 EXE](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.1/PneuMatrix-Setup-2.0.1.exe) |
 
 메인보드 HW·펌웨어·프로그램 버전 조합은 [메인 호환성 표](../README.md#펌웨어와-pneumatrix-control-호환성)를 확인하세요.
 
@@ -12,7 +12,7 @@
 
 1. 설치 EXE를 다운로드하여 실행합니다. Python이나 개발 도구는 필요하지 않습니다.
 2. 장비 USB 포트가 인식되지 않으면 [CH340 드라이버](../drivers/ch340/README.md)를 설치합니다.
-3. 프로그램에서 포트와 장비 주소를 선택해 연결합니다.
+3. 프로그램에서 포트를 선택해 연결합니다. 장비 주소는 기본 `0`(USB로 직접 연결한 장비)이며, RS485로 연결한 다른 장비를 제어할 때만 `1`~`F`로 바꿉니다.
 4. 장비 모델·메인보드 HW·펌웨어 버전을 확인한 후 사용합니다.
 
 펌웨어 업데이터와 동시에 같은 COM 포트를 사용하지 마세요.

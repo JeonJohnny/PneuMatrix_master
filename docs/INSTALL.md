@@ -2,7 +2,7 @@
 
 ## 준비할 파일
 
-- [PneuMatrix Control 2.0.0 설치 EXE](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.0/PneuMatrix-Setup-2.0.0.exe)
+- [PneuMatrix Control 2.0.1 설치 EXE](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.1/PneuMatrix-Setup-2.0.1.exe)
 - 펌웨어 변경이 필요할 경우 업데이터 설치 EXE 및 장비 HW에 맞는 `.tkfw`
 - Windows에서 USB 포트를 인식하지 못하면 제조사 CH340 드라이버
 

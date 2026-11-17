@@ -8,7 +8,7 @@ PneuMatrix 장비용 펌웨어와 Windows 제어 프로그램 배포 저장소�
 | --- | --- | --- |
 | 펌웨어 업데이터 설치파일 | 0.3.3 | [Setup EXE](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/updater-v0.3.3/TKMS_Updater_Setup_0.3.3.exe) |
 | 장비 펌웨어 파일 | 2.8.1 (HW v002 이상 호환) | [TKFW](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/firmware-v2.8.1/TKMS_v002_v2.8.1_update.tkfw) |
-| 윈도우 제어 소프트웨어 설치파일 (PneuMatrix Control) | 2.0.0 | [Windows 설치본](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.0/PneuMatrix-Setup-2.0.0.exe) |
+| 윈도우 제어 소프트웨어 설치파일 (PneuMatrix Control) | 2.0.1 | [Windows 설치본](https://github.com/JeonJohnny/PneuMatrix_master/releases/download/control-v2.0.1/PneuMatrix-Setup-2.0.1.exe) |
 | USB 드라이버 (CH340) | 제조사 제공 | [설치 안내](drivers/ch340/README.md) |
 
 </br>
@@ -17,9 +17,9 @@ PneuMatrix 장비용 펌웨어와 Windows 제어 프로그램 배포 저장소�
 
 | 장비 메인보드 버전 | 장비 펌웨어 버전 | PneuMatrix Control GUI | 설치·업데이트 안내 |
 | --- | --- | --- | --- |
-| **v002** | **2.8.1 이상** | **2.0.0** | 펌웨어 업데이트 가능 |
-| v002 | 2.7.0–2.7.x | 2.0.0 | 펌웨어 업데이트 가능 |
-| v002 | 2.5.1–2.6.x | 2.0.0 | 본사에 호환성 및 업데이트 지원 문의 |
+| **v002** | **2.8.1 이상** | **2.0.1** | 펌웨어 업데이트 가능 |
+| v002 | 2.7.0–2.7.x | 2.0.1 | 펌웨어 업데이트 가능 |
+| v002 | 2.5.1–2.6.x | 2.0.1 | 본사에 호환성 및 업데이트 지원 문의 |
 | v002 | 2.5.0-2.5.x | — | 본사에 호환성 및 업데이트 지원 문의 |
 | v001 | 2.1.0-2.4.x | — | 2025년 이전 제품 |
 
