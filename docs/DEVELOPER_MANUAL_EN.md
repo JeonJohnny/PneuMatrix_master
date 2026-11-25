@@ -2,13 +2,13 @@
 
 [한국어](DEVELOPER_MANUAL_KO.md) | [English](DEVELOPER_MANUAL_EN.md)
 
-USB Serial / RS485 protocol · Document v1.3
+USB Serial / RS485 protocol · Document v1.4
 
 | Item | Reference |
 | --- | --- |
-| Document version | 1.3 |
-| Date | 2026-09-27 |
-| Reference firmware | **v2.8.1** / HW v002 |
+| Document version | 1.4 |
+| Date | 2026-11-25 |
+| Reference firmware | **v3.1.0** / HW v002 (command and response formats unchanged from v2.8.1) |
 | Audience | Control software developers and PLC/PC integrators |
 | Scope | Device identification, valve and pressure control, queries, host parsing |
 
@@ -18,7 +18,7 @@ Prefix every command with one address character and terminate it with LF (`\n`).
 
 | Purpose | Request | Example response |
 | --- | --- | --- |
-| Device identity | `1?I` | `1?I,TKPM-D11,v002,v2.8.1,PM26J001,100,100,0,0` |
+| Device identity | `1?I` | `1?I,TKPM-D11,v002,v3.1.0,PM26J001,100,100,0,0` |
 | Open valve 3 | `1o3` | `1O3,ON` |
 | Close valve 3 | `1x3` | `1X3,OFF` |
 | Close all valves | `1b00` | `1B00,OK` |
@@ -89,7 +89,7 @@ For example, `1P1,20` is not a set command. A local USB request produces `ERR-10
 
 ```text
 TX 1?I
-RX 1?I,TKPM-D11,v002,v2.8.1,PMABCD001,100,100,0,0
+RX 1?I,TKPM-D11,v002,v3.1.0,PMABCD001,100,100,0,0
 ```
 
 | Field after `1?I` | Meaning |
@@ -163,7 +163,7 @@ Without a provisioned profile, relay outputs are forced OFF. Set-command ACKs ma
 | Resolution | 0.1 kPa |
 | Extra decimal places | Round at the second decimal digit |
 | Normal-control minimum | Rounded values below 1.0 kPa produce DAC raw 0 |
-| Maximum | Limited by the channel range and output calibration |
+| Maximum | Channel maximum pressure. Larger values are clamped to it and the ACK shows the clamped value. Whether it is reached depends on the supply pressure |
 
 ```text
 1p1,20      -> 1P1,20.0,OK
@@ -181,6 +181,7 @@ Without a provisioned profile, relay outputs are forced OFF. Set-command ACKs ma
 
 - Read each channel's maximum pressure from `?I`.
 - Output conversion uses a stored per-channel calibration table or the applicable default calibration. Pressure control is calibrated before shipment.
+- From FW v3.0.0, for a few seconds after a setpoint is applied the device fine-tunes its output so that the measured pressure (?A) settles on the setpoint (?P), typically within ±0.1 kPa. A small difference during that time is normal. The command format is unchanged.
 
 ### 5.4 Setpoint query — `[ADDR]?P[REG]`
 
@@ -271,7 +272,7 @@ Example with node 1 and channels 1/2 enabled:
 
 ```text
 TX 1?I
-RX 1?I,TKPM-D11,v002,v2.8.1,PMABC001,100,100,0,0
+RX 1?I,TKPM-D11,v002,v3.1.0,PMABC001,100,100,0,0
 TX 1p1,20.5
 RX 1P1,20.5,OK
 TX 1?P1
